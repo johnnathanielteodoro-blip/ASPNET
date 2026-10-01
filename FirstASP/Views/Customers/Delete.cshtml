@@ -1,0 +1,38 @@
+
+@model FirstASP.Models.Customer
+
+@{
+    ViewData["Title"] = "Delete Customer";
+}
+
+<h1>Delete Customer</h1>
+
+<h3>Are you sure you want to delete this customer?</h3>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Customer Name</dt>
+        <dd class="col-sm-9">@Model.CustomerName</dd>
+
+        <dt class="col-sm-3">Contact Name</dt>
+        <dd class="col-sm-9">@Model.ContactName</dd>
+
+        <dt class="col-sm-3">Email</dt>
+        <dd class="col-sm-9">@Model.Email</dd>
+
+        <dt class="col-sm-3">Phone</dt>
+        <dd class="col-sm-9">@Model.Phone</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="CustomerId" />
+
+        <button type="submit" class="btn btn-danger">
+            Confirm Delete
+        </button>
+
+        <a asp-action="Index" class="btn btn-secondary">
+            Cancel
+        </a>
+    </form>
+</div>
